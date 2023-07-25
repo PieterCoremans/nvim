@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
   use { 'vim-airline/vim-airline-themes' }
 
   use { 'tpope/vim-vinegar' }
+  use { 'tpope/vim-fugitive' }
 
   -- use({
 	  -- 'github/github',
