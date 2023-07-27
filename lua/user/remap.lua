@@ -4,6 +4,8 @@ local map = vim.keymap.set
 
 map("n", "<leader>h", vim.cmd.nohl)
 
+map("n", "<leader>a", "$")
+
 -- Open netrw
 map("n", "<leader>e", vim.cmd.Ex)
 
@@ -80,7 +82,10 @@ map("n", "<C-u>", "<C-u>zz")
 map({"n", "v"}, "<leader>y", '"+y')
 
 -- Paste from to "+ register
-map({"n", "v"}, "<leader>p", '"+p')
+map("n", "<leader>p", '"+p')
+
+-- Keep paste buffer after paste
+map("x", "<leader>p", "\"_dP")
 
 -- Delete to black hole register
 map({"n", "x"}, "x", '"_x')
@@ -91,7 +96,7 @@ map("i", "<C-c>", "<Esc>")
 -- Make Q not register
 map("n", "Q", "<nop>")
 
--- Surround word with 
+-- Surround word with
 map("n", "<leader>sb", "viwc()<Esc>P")
 map("n", "<leader>s\"", "viwc\"\"<Esc>P")
 map("n", "<leader>s\'", "viwc\'\'<Esc>P")
@@ -100,4 +105,12 @@ map("n", "<leader>s\'", "viwc\'\'<Esc>P")
 map("v", "<leader>sb", "c()<Esc>P")
 map("v", "<leader>s\"", "c\"\"<Esc>P")
 map("v", "<leader>s\'", "c\'\'<Esc>P")
+
+-- Replace visually selected text in whole document with confirmation
+map("v", "<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>')
+
+-- Search for visually selected text
+vim.cmd [[
+    vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
+]]
 

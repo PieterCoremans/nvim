@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd({ "FileType " }, {
         nnoremap <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
         inoremap <buffer> <F9> <Esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
     ]]
-    
+
     -- Python comment/uncomment line
   map("n", "<leader>lc", function()
       local linestart = GetStart() if linestart == "# " then return "0xx" else return "0i# <Esc>" end
