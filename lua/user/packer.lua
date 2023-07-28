@@ -1,8 +1,5 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configured as `opt`
--- vim.cmd [[packadd packer.nvim]]
-
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -43,19 +40,18 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-fugitive' }
     use 'ThePrimeagen/vim-be-good'
 
-    --   use({
-        -- 	  'github/github',
-        -- 	  as = 'givenname'
-        -- 	  config = function()
-            -- 		  vim.cmd('colorscheme givenname')
-            -- 	  end
-            --   })
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        config = function()
+            vim.cmd('colorscheme rose-pine')
+        end
+    })
 
-            -- Automatically set up your configuration after cloning packer.nvim
-            -- Put this at the end after all plugins
-            if packer_bootstrap then
-                require('packer').sync()
-            end
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 
-        end)
-
+end)

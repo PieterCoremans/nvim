@@ -21,3 +21,13 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 
+vim.opt.updatetime = 50
+
+vim.opt.colorcolumn = "80"
+
+vim.cmd [[
+    let &colorcolumn=join(range(81,999),",")
+    highlight ColorColumn ctermbg=235 guibg=#2c2d27
+]]
+
+
