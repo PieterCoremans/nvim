@@ -30,4 +30,14 @@ vim.cmd [[
     highlight ColorColumn ctermbg=235 guibg=#2c2d27
 ]]
 
+vim.o.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
+-- o.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
+-- o.formatoptions = 'qrn1'
+
+-- Makes neovim and host OS clipboard play nicely with each other
+vim.o.clipboard = 'unnamedplus'
+
+-- Better buffer splitting
+-- o.splitright = true
+-- o.splitbelow = true
 
