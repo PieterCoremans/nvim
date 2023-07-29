@@ -38,7 +38,35 @@ return require('packer').startup(function(use)
 
     use { 'tpope/vim-vinegar' }
     use { 'tpope/vim-fugitive' }
-    use 'ThePrimeagen/vim-be-good'
+
+    use { 'ThePrimeagen/vim-be-good' }
+
+    use ({ 'lukas-reineke/indent-blankline.nvim' ,
+        config = function()
+            require('indent_blankline').setup({
+                char = '▏',
+                show_trailing_blankline_indent = false,
+                show_first_indent_level = false,
+                use_treesitter = true,
+                show_current_context = false
+            })
+        end
+    })
+
+    use ({ 'lewis6991/gitsigns.nvim' ,
+        -- config = function()
+        --     require('gitsigns').setup({
+        --         signs = {
+                    -- add = {text = '▎'},
+                    -- change = {text = '▎'},
+                    -- delete = {text = '➤'},
+                    -- topdelete = {text = '➤'},
+                    -- changedelete = {text = '▎'},
+                -- }
+            -- })
+        -- end
+    })
+
 
     use({
         'rose-pine/neovim',
