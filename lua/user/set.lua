@@ -38,6 +38,6 @@ vim.o.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
 vim.o.clipboard = 'unnamedplus'
 
 -- Better buffer splitting
--- o.splitright = true
--- o.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
