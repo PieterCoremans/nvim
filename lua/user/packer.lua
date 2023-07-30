@@ -41,6 +41,8 @@ return require('packer').startup(function(use)
 
     use { 'ThePrimeagen/vim-be-good' }
 
+    use { 'christoomey/vim-tmux-navigator' }
+
     use ({ 'lukas-reineke/indent-blankline.nvim' ,
         config = function()
             require('indent_blankline').setup({

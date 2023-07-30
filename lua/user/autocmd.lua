@@ -1,21 +1,21 @@
 local map = vim.keymap.set
 local A = vim.api
 
-vim.api.nvim_create_autocmd({ "FileType " }, {
-  pattern = { "lua", "sql" },
-  callback = function()
+-- vim.api.nvim_create_autocmd({ "FileType " }, {
+--   pattern = { "lua", "sql" },
+--   callback = function()
  -- Lua/SQL comment/uncomment line
-  map("n", "<leader>cl", function()
-      local linestart = GetStart() if linestart == "--" then return "0xxx" else return "0i-- <Esc>" end
-  end, { expr = true })
+  -- map("n", "<leader>cl", function()
+  --     local linestart = GetStart() if linestart == "--" then return "0xxx" else return "0i-- <Esc>" end
+  -- end, { expr = true })
 
  -- Lua/SQL comment/uncomment block
-  map("n", "<leader>cp", function()
-      local linestart = GetStart() if linestart == "-- " then return "<C-v>}k:norm 0xxx <Esc>0j" else return "<C-v>}k:norm 0i-- <Esc>0j" end
-  end, { expr = true })
-
-end,
-})
+--   map("n", "<leader>cp", function()
+--       local linestart = GetStart() if linestart == "-- " then return "<C-v>}k:norm 0xxx <Esc>0j" else return "<C-v>}k:norm 0i-- <Esc>0j" end
+--   end, { expr = true })
+--
+-- end,
+-- })
 
 vim.api.nvim_create_autocmd({ "FileType " }, {
   pattern = { "python" },
@@ -27,14 +27,14 @@ vim.api.nvim_create_autocmd({ "FileType " }, {
     ]]
 
     -- Python comment/uncomment line
-  map("n", "<leader>cl", function()
-      local linestart = GetStart() if linestart == "# " then return "0xx" else return "0i# <Esc>" end
-  end, { expr = true })
+  -- map("n", "<leader>cl", function()
+  --     local linestart = GetStart() if linestart == "# " then return "0xx" else return "0i# <Esc>" end
+  -- end, { expr = true })
 
     -- Python comment/uncomment block
-  map("n", "<leader>cp", function()
-      local linestart = GetStart() if linestart == "# " then return "<C-v>}k:norm 0xx <Esc>0j" else return "<C-v>}k:norm 0i# <Esc>0j" end
-  end, { expr = true })
+  -- map("n", "<leader>cp", function()
+  --     local linestart = GetStart() if linestart == "# " then return "<C-v>}k:norm 0xx <Esc>0j" else return "<C-v>}k:norm 0i# <Esc>0j" end
+  -- end, { expr = true })
 
 end,
 })

@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
-map("n", "<leader>h", vim.cmd.nohl)
+map("n", "<leader>hl", vim.cmd.nohl)
 
 map("n", "<leader>a", "$")
 
@@ -16,8 +16,8 @@ map("n", "<leader>q", vim.cmd.q)
 -- Go to next/previous buffer
 -- map("n", "<leader>bn", vim.cmd.bn)
 -- map("n", "<leader>bp", vim.cmd.bp)
-map("n", "<leader>n", vim.cmd.bn)
-map("n", "<leader>p", vim.cmd.bp)
+-- map("n", "<leader>n", vim.cmd.bn)
+-- map("n", "<leader>p", vim.cmd.bp)
 map('n', '<leader>[', '<CMD>bp<CR>')
 map('n', '<leader>]', '<CMD>bn<CR>')
 map('n', '<Tab>', '<CMD>bn<CR>')
@@ -53,15 +53,20 @@ map("t", "<C-\\>", "<C-\\><C-N><C-w>k") -- only works after <leader>t command
 
 -- map Ctrl+{h,j,k,l} to navigate windows
 -- from normal mode
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+-- map("n", "<C-h>", "<C-w>h")
+-- map("n", "<C-j>", "<C-w>j")
+-- map("n", "<C-k>", "<C-w>k")
+-- map("n", "<C-l>", "<C-w>l")
 -- from insert or terminal mode
-map({"i", "t"}, "<C-h>", "<C-\\><C-N><C-w>h")
-map({"i", "t"}, "<C-j>", "<C-\\><C-N><C-w>j")
-map({"i", "t"}, "<C-k>", "<C-\\><C-N><C-w>k")
-map({"i", "t"}, "<C-l>", "<C-\\><C-N><C-w>l")
+-- map({"i", "t"}, "<C-h>", "<C-\\><C-N><C-w>h")
+-- map({"i", "t"}, "<C-j>", "<C-\\><C-N><C-w>j")
+-- map({"i", "t"}, "<C-k>", "<C-\\><C-N><C-w>k")
+-- map({"i", "t"}, "<C-l>", "<C-\\><C-N><C-w>l")
+-- from terminal mode
+map({"t"}, "<C-h>", "<C-\\><C-N><C-w>h")
+map({"t"}, "<C-j>", "<C-\\><C-N><C-w>j")
+map({"t"}, "<C-k>", "<C-\\><C-N><C-w>k")
+map({"t"}, "<C-l>", "<C-\\><C-N><C-w>l")
 
 -- Resize window
 -- map({"n", "t"}, "<leader>rs", vim.cmd.resize 10)
@@ -103,7 +108,7 @@ map('v', '<C-x>', '"+d')
 map('v', '<C-p>', '"+p')
 
 -- Keep paste buffer after paste
--- map("x", "<leader>p", "\"_dP")
+map("x", "<leader>p", "\"_dP")
 
 -- Delete to black hole register
 map({"n", "x"}, "x", '"_x')
