@@ -1,38 +1,36 @@
--- vim.opt.guicursor = ""
+local O = vim.opt
+-- O.guicursor = ""
 
--- vim.opt.cursorline = true
+-- O.cursorline = true
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+O.nu = true
+O.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+O.tabstop = 4
+O.softtabstop = 4
+O.shiftwidth = 4
+O.expandtab = true
 
-vim.opt.smartindent = true
+O.smartindent = true
 
-vim.opt.wrap = false
+O.wrap = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+O.hlsearch = true
+O.incsearch = true
 
-vim.opt.termguicolors = true
+O.termguicolors = true
 
-vim.opt.scrolloff = 8
+O.scrolloff = 8
 
-vim.opt.updatetime = 50
+O.updatetime = 50
 
-vim.opt.colorcolumn = "80"
-
+O.colorcolumn = "80"
 vim.cmd [[
     let &colorcolumn=join(range(81,999),",")
-    highlight ColorColumn ctermbg=235 guibg=#2c2d27
+    " highlight ColorColumn ctermbg=235 guibg=#2c2d27
 ]]
 
-vim.o.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
--- o.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
--- o.formatoptions = 'qrn1'
+-- vim.o.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
 
 -- Makes neovim and host OS clipboard play nicely with each other
 vim.o.clipboard = 'unnamedplus'

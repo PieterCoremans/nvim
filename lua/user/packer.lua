@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
-        -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
@@ -33,15 +32,15 @@ return require('packer').startup(function(use)
         end
     }
 
-    use { 'vim-airline/vim-airline' }
-    use { 'vim-airline/vim-airline-themes' }
+    use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes'
 
-    use { 'tpope/vim-vinegar' }
-    use { 'tpope/vim-fugitive' }
+    use 'tpope/vim-vinegar'
+    use 'tpope/vim-fugitive'
 
-    use { 'ThePrimeagen/vim-be-good' }
+    use 'ThePrimeagen/vim-be-good'
 
-    use { 'christoomey/vim-tmux-navigator' }
+    use 'christoomey/vim-tmux-navigator'
 
     use ({ 'lukas-reineke/indent-blankline.nvim' ,
         config = function()
@@ -55,20 +54,7 @@ return require('packer').startup(function(use)
         end
     })
 
-    use ({ 'lewis6991/gitsigns.nvim' ,
-        -- config = function()
-        --     require('gitsigns').setup({
-        --         signs = {
-                    -- add = {text = '▎'},
-                    -- change = {text = '▎'},
-                    -- delete = {text = '➤'},
-                    -- topdelete = {text = '➤'},
-                    -- changedelete = {text = '▎'},
-                -- }
-            -- })
-        -- end
-    })
-
+    use 'lewis6991/gitsigns.nvim'
 
     use({
         'rose-pine/neovim',

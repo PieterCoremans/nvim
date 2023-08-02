@@ -14,10 +14,6 @@ map("n", "<leader>w", vim.cmd.w)
 map("n", "<leader>q", vim.cmd.q)
 
 -- Go to next/previous buffer
--- map("n", "<leader>bn", vim.cmd.bn)
--- map("n", "<leader>bp", vim.cmd.bp)
--- map("n", "<leader>n", vim.cmd.bn)
--- map("n", "<leader>p", vim.cmd.bp)
 map('n', '<leader>[', '<CMD>bp<CR>')
 map('n', '<leader>]', '<CMD>bn<CR>')
 map('n', '<Tab>', '<CMD>bn<CR>')
@@ -87,27 +83,19 @@ map('i', '[', '[]<Left>')
 -- Reference: https://vim.fandom.com/wiki/Moving_lines_up_or_down
 -- map('n', '<C-j>', '<CMD>move .+1<CR>')
 -- map('n', '<C-k>', '<CMD>move .-2<CR>')
--- map('x', '<C-j>', ":move '>+1<CR>gv=gv")
--- map('x', '<C-k>', ":move '<-2<CR>gv=gv")
+-- map('x', '<C-J>', ":move '>+1<CR>gv=gv")
+-- map('x', '<C-K>', ":move '<-2<CR>gv=gv")
 
 -- Keep cursor in the middle of the page while doing page down/up
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 
--- Yank to "+ register
--- map({"n", "v"}, "<leader>y", '"+y')
--- Paste from to "+ register
--- map("n", "<leader>p", '"+p')
-
---Copy selected text to system clipboard (requires gvim installed):
---remap Ctrl+c to copy from vim to clipboard
+--Copy, cut and paste to/form system clipboard (requires gvim installed):
 map('v', '<C-c>', '"+y')
---remap Ctrl+x to cut from vim to clipboard
 map('v', '<C-x>', '"+d')
---remap Ctrl+p to paste from clipboard to vim
 map('v', '<C-p>', '"+p')
 
--- Keep paste buffer after paste
+-- Paste while keeping paste buffer after paste
 map("x", "<leader>p", "\"_dP")
 
 -- Delete to black hole register
